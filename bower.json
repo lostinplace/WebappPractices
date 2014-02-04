@@ -1,0 +1,24 @@
+{
+  "name": "WebappPractices",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lostinplace/WebappPractices",
+  "authors": [
+    "Chris Wheeler <cwheeler@zipcar.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.0",
+    "bootstrap": "~3.1.0",
+    "requirejs": "~2.1.10",
+    "jquery": ">2",
+    "codemirror-plugin": "git@github.com:iros/deck.js-codemirror.git"
+  }
+}
