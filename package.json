@@ -5,6 +5,11 @@
   "scripts": {
     "start": "node app.js"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-util": "~2.2.14",
+    "tiny-lr": "0.0.5",
+    "express": "~3.4.7"
   }
 }
