@@ -12,13 +12,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "assets"
   ],
   "dependencies": {
     "backbone": "~1.1.0",
     "bootstrap": "~3.1.0",
-    "codemirror-plugin": "git@github.com:iros/deck.js-codemirror.git",
     "deck.js": "~1.1.0",
-    "requirejs": "~2.1.10"
+    "requirejs": "~2.1.10",
+    "ace-builds": "~1.1.1",
+    "codeblock": "git@github.com:Ink/codeblock.js.git"
   }
 }
