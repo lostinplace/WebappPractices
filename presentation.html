@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="/assets/reveal.js/css/reveal.min.css">
-    <link rel="stylesheet" href="/assets/reveal.js/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="/assets/reveal.js/css/theme/solarized.css" id="theme">
 
     <link rel="stylesheet" href="/assets/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" type="text/css" href="/assets/codeblock/codeblock.css">
+    
   </head>
 
   <body>
@@ -26,14 +28,36 @@
 
         <section>
           <h2>Heads Up</h2>
-          <p>
-            reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-            support for CSS 3D transforms to see it in its full glory.
-          </p>
-
+          <div id="pres" style="text-align:left" >
+            <article class="codeblock">
+//Try playing with the parameters
+var R=0, s=5; x1=.1; y1=.05, x2=.25, y2=.24, x3=1.6,
+  y3=.24, x4=300, y4=200, x5=300, y5=200;
+//Try various tags here (p, a, code, etc.)
+//var elems=document.getElementsByTagName("h3");
+var elems=document.querySelectorAll("#sandstorm_demo span");
+var l=elems.length;
+var i, c;
+var A = function (){
+  for(i=0; i-l; i++){
+    c=elems[i].style; c.position='absolute';
+    c.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px";
+    c.top=(Math.cos(R*y1+i*y2+y3)*y4+y5)+"px";
+  }
+  R++;
+};
+//Loop
+setInterval(function(){A()},s);
+console.log("Sandstorm!");
+            </article>
+          </div>
           <aside class="notes">
             Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
           </aside>
+        </section>
+
+        <section>
+          <h2>attempt 2</h2>
         </section>
 
       </div>
@@ -42,6 +66,10 @@
 
     <script src="/assets/reveal.js/lib/js/head.min.js"></script>
     <script src="/assets/reveal.js/js/reveal.min.js"></script>
+
+    <script src="/assets/jquery/jquery.js"></script>
+    <script src="/assets/ace-builds/src/ace.js"></script>
+    <script src="/assets/codeblock/codeblock.js"></script>
 
     <script>
 
@@ -66,7 +94,15 @@
         ]
       });
 
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        $(event.currentSlide).find('article').codeblock();
+        $(event.previousSlide).find('article').codeblock("destroy");
+      } );
+
+
     </script>
+
+
 
   </body>
 </html>

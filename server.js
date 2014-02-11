@@ -3,7 +3,7 @@ var express = require('express'),
 
 app.use(express.compress());
 app.use(express.static(__dirname));
-app.use('/t', function(req, res, next){
+app.use('/', function(req, res, next){
   res.sendfile('presentation.html');
 });
 app.listen(process.env.PORT || 3000);

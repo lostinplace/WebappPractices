@@ -21,6 +21,7 @@
     "deck.js": "~1.1.0",
     "requirejs": "~2.1.10",
     "ace-builds": "~1.1.1",
-    "codeblock": "git@github.com:Ink/codeblock.js.git"
+    "codeblock": "git@github.com:Ink/codeblock.js.git",
+    "reveal.js": "2.6.1"
   }
 }
