@@ -22,6 +22,7 @@
     "requirejs": "~2.1.10",
     "ace-builds": "~1.1.1",
     "codeblock": "git@github.com:Ink/codeblock.js.git",
-    "reveal.js": "2.6.1"
+    "reveal.js": "2.6.1",
+    "highlight.js": "7.3.0"
   }
 }

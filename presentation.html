@@ -11,7 +11,104 @@
 
     <link rel="stylesheet" href="/assets/reveal.js/lib/css/zenburn.css">
     <link rel="stylesheet" type="text/css" href="/assets/codeblock/codeblock.css">
-    
+    <link rel="stylesheet" href="/assets/src/styles/default.css">
+    <style type="text/css">
+      .goofus_speech{
+        font-family: Comic Sans, Comic Sans MS, cursive !important;
+      }
+
+      .gallant_speech{
+        font-family: Zapf Chancery, cursive !important;
+      }
+
+      .goofus_menu{
+        background-color: black;
+        color: white;
+      }
+
+      .goofus_menu td:first-child{
+        min-width: 0px !important;
+      }
+
+      .goofus_menu td{
+        min-width: 150px;
+        border-left-color: white;
+        border-left-style: solid;
+        border-left-width: 1px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      .goofus_menu img{
+        margin-bottom: -10px !important;
+      }
+
+      menu.gallant_menu{
+        list-style-type: none;
+        background-color: black;
+      }
+
+      menu.gallant_menu.transition{
+        -webkit-transition: opacity 200ms ease;
+        -moz-transition: opacity 200ms ease;
+        -ms-transition: opacity 200ms ease;
+        -o-transition: opacity 200ms ease;
+        transition: opacity 200ms ease;
+      }
+
+      menu.gallant_menu *{
+        color:white !important;
+      }
+
+      menu.gallant_menu>*:not(img){
+        display: inline-block;
+        min-width: 150px;
+        border-left-color: white;
+        border-left-style: solid;
+        border-left-width: 1px;
+        min-height: 48px;
+      }
+
+
+
+      menu.gallant_menu li:hover{
+        background-color: lightblue;
+      }
+
+      menu.gallant_menu menu.submenu{
+        display: none;
+        opacity: 0;
+        position: absolute;
+        list-style-type: none;
+        background-color: black;
+        color:white;
+        border-color: white;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-width: 1px;
+      }
+
+      menu.gallant_menu li:hover menu.submenu{
+        display: block;
+        opacity: 1;
+      }
+
+      menu.submenu:hover{
+        display: block;
+        opacity: 1;
+      }
+
+      menu.gallant_menu>li>span{
+        margin-bottom: 15px;  
+      }
+
+      menu.gallant_menu>img{
+        margin:0px !important;
+        float: left;
+      }
+
+    </style>
+
   </head>
 
   <body>
@@ -19,58 +116,954 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Reveal.js</h1>
-          <h3>HTML Presentations Made Easy</h3>
+          <h1>Good Practices for WebApp Development</h1>
+          <h3>Goofus v. Gallant</h3>
           <p>
-            <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+            <small>Created by Chris Wheeler</small>
+          </p>
+        </section>
+        <section>
+          <h2>What is this?</h2>
+          <p>
+            Code Review is great, but is not an always ideal time for discussion
+          </p>
+          <ul>
+            <li class="fragment">
+              Deadlines
+            </li>
+            <li class="fragment">
+              Waiting on people
+            </li>
+            <li class="fragment">
+              Fisheye is weird
+            </li>
+          </ul>
+          <br />
+          <br />
+          <p class="fragment">
+            Maybe we can start talking about <strong>standards</strong>
+          </p>
+        </section>
+        <section>
+          <h2>What this isn't</h2>
+          <p class="fragment">
+            I'm not telling anyone they're bad <small class="fragment">(right now)</small>
+          </p>
+          <br/>
+          <p class="fragment">Goofus Examples:</p>
+          <ul>
+            <li class="fragment">
+              Examples help illustrate points
+            </li>
+            <li class="fragment">
+              Concrete examples are fun to discuss
+            </li>
+            <li class="fragment">
+              I'm not here to present perfect code
+            </li>
+            <li class="fragment">
+              Pissing on straw men is fun
+            </li>
+          </ul>
+          <br />
+          <br />
+          <p>
+            <strong class="fragment">QUESTIONS ARE WELCOME</strong>
+          </p>
+          
+        </section>
+        <section>
+          <section>
+            <h2>
+              Introductions
+            </h2>
+            <img src="gvg.jpg" />
+            <p class="fragment">
+              (goofus has cooler hair)
+            </p>
+          </section>
+        </section>
+        <section>
+          <h2>
+            Introductions
+          </h2>
+          <div>
+            <h3>
+              Goofus
+            </h3>
+            <ul>
+              <li class="fragment">
+                Thinks "If it works, we ship it, NOW!"
+              </li>
+              <li class="fragment">
+                "I'm more valuable if I'm the only one who understands" 
+                <small class="fragment">and I definitely understand it... mostly</small>
+              </li>
+              <li class="fragment">
+                once wrote
+                <pre class="fragment">
+                  <code>
+/(\d+(?:[.,]\d+)?)\s*[xX*/\\]\s*(\d+(?:[.,]\d+)?)(?:\s*[xX*/\\]\s*(\d+(?:[.,]\d+)?))?/
+                  </code>
+                </pre>
+                <p class="fragment">to identify a N x M matrix</p>
+              </li>
+              <li class="fragment">
+                Loves <strong class="fragment"> really </strong> 
+                <i class="fragment" style="position:absolute; margin-top:-250px; margin-left:-150px">super</i> 
+                <b class="fragment" style="float:left; margin-left:400px">clever</b> 
+                <center class="fragment">code</center>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2>
+            Introductions
+          </h2>
+          <div>
+            <h3>
+              Gallant
+            </h3>
+            <ul>
+              <li class="fragment">
+                Wants to make sure his code works
+              </li>
+              <li class="fragment">
+                "Everyone should be on the same page"
+              </li>
+              <li class="fragment">
+                Is ok with writing extra lines of code if it means better readability (and maintainability)
+              </li>
+              <li class="fragment">
+                Has perhaps an unhealthy obsession with <a href="html5doctor.com">HTML5 Doctor</a>
+                <small class="fragment">has recently learned that this is not what people mean when they talk about playing doctor</small>
+                <small class="fragment">on a related note: has recently stopped inviting people into secluded rooms to play doctor</small>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2>
+            1: <strong class="fragment">Write What You Mean</strong>
+          </h2>
+          <p class="fragment">
+            Hacking is fast (and fun) but really hard to maintain
+          </p>
+          <br />
+          <p class="fragment">
+            You might not always get bit, but no one should be surprised when you do
+          </p>
+          <br />
+          <p class="fragment">
+            You're usually not the one who will be fixing your code
           </p>
         </section>
 
+
         <section>
-          <h2>Heads Up</h2>
-          <div id="pres" style="text-align:left" >
-            <article class="codeblock">
-//Try playing with the parameters
-var R=0, s=5; x1=.1; y1=.05, x2=.25, y2=.24, x3=1.6,
-  y3=.24, x4=300, y4=200, x5=300, y5=200;
-//Try various tags here (p, a, code, etc.)
-//var elems=document.getElementsByTagName("h3");
-var elems=document.querySelectorAll("#sandstorm_demo span");
-var l=elems.length;
-var i, c;
-var A = function (){
-  for(i=0; i-l; i++){
-    c=elems[i].style; c.position='absolute';
-    c.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px";
-    c.top=(Math.cos(R*y1+i*y2+y3)*y4+y5)+"px";
+          <section>
+            <h2>Goofus</h2>    
+            <pre>
+              <code >
+function showMessage(aMessage){
+  //Show a message in the message div
+}
+              </code>
+            </pre>
+          </section> 
+          <section>
+            <h2>Goofus</h2>    
+            <pre>
+              <code >
+function showMessage(aMessage){
+  $('div.message').html(aMessage)
+}
+              </code>
+            </pre>
+            <p class="fragment">
+              What about custom markup?
+            </p>
+            <p class="fragment goofus_speech" >
+              Taken care of!
+            </p>
+            <p class="fragment">
+              What about security?
+            </p>
+          </section>
+          <section>
+            <h2>Goofus</h2>    
+            <pre>
+              <code >
+function showMessage(aMessage){
+  $('div.message').html(aMessage.replace(/&lt;script .*/,'UNSAFE'))
+}
+              </code>
+            </pre>
+            <p class="fragment">
+              Translations?
+            </p>
+          </section>
+          <section>
+            <h2>Goofus</h2>    
+            <pre>
+              <code>
+function showMessage(aMessage){
+  $('div.message').html(aMessage.replace(/&lt;script .*/,'UNSAFE'))
+    .each(function(){
+      this.nodeValue=translate(aMessage);
+      //SAFE
+    }
+  );
+}
+              </code>
+            </pre>
+            <p class="fragment">
+              I found this in real code
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Gallant</h2>    
+            <pre>
+              <code >
+function showMessage(aMessage){
+  //Show a message in the message div
+}
+              </code>
+            </pre>
+          </section> 
+          <section>
+            <h2>Gallant</h2>    
+            <pre>
+              <code >
+function showMessage(aMessage){
+  $('div.message').text(aMessage)
+}
+              </code>
+            </pre>
+            <p class="fragment">
+              What about custom markup?
+            </p>
+            <p class="fragment gallant_speech">
+              What kind of custom markup?
+            </p>
+            <p class="fragment">
+              We want to style things differently
+            </p>
+          </section>
+          <section>
+            <h2>Gallant</h2>    
+            <p class="gallant_speech">
+              What do I really want here?
+            </p>
+            <pre>
+              <code >
+//an optional class will allow us to manage some new styling
+function showMessage(aMessage, anOptionalStyle){
+  //Well, custom styling means we might want a new element
+  var element = $('&lt;p />')
+    .addClass(anOptionalStyle)
+    .text(aMessage);
+  
+  //Once I have built it, now I add it.
+  $('div.message')
+    .empty()
+    .append(element);
+}
+              </code>
+            </pre>
+            <p class="fragment">
+              Ok, that works, what about translations?
+            </p>
+          </section>
+          <section>
+            <h2>Gallant</h2>    
+            <p class="gallant_speech">
+              Well that's simple enough
+            </p>
+            <pre>
+              <code >
+
+function showMessage(aMessage, anOptionalStyle){
+  var translatedMessage = translate(aMessage);
+
+  var element = $('&lt;p />')
+    .addClass(anOptionalStyle)
+    .text(translatedMessage);
+
+  $('div.message')
+    .empty()
+    .append(element);
+}
+              </code>
+            </pre>
+          </section>
+        </section>
+        <section>
+          <h2>Writing What you mean:</h2>
+          <ul>
+            <li class="fragment">
+              Don't get ahead of yourself
+            </li>
+            <li class="fragment">
+              Make sure you understand the libraries you're working with
+            </li>
+            <li class="fragment">
+              Ask yourself, "What's really happening here?"
+            </li>
+            <li class="fragment">
+              Try to write code that shows your process step-by-step
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            2: <strong class="fragment">Things Have Purposes</strong>
+          </h2>
+          <p class="fragment">
+            The W3C is comprised of a bunch of smart people
+            <br />
+            <strong class="fragment">DON'T FIGHT THEM</strong>
+          </p>
+          <br />
+          <ul>
+            <li class="fragment">
+              DOM is for data that the user interacts with
+            </li>
+            <li class="fragment">
+              HTML Elements have semantic meaning
+            </li>
+            <li class="fragment">
+              CSS is for the presentation of data
+            </li>
+            <li class="fragment">
+              Javascript mediates the interactions between user and data
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>
+              Goofus:
+            </h2>
+            <p>knows that tables are bad, but why?</p>
+            <br />
+
+            <table class="goofus_menu">
+              <tr>
+                <td>
+                  <img height="50" width="50" src="transleaf.png" style="border-style:none"/>
+                </td>
+                <td>Home</td>
+                <td>Albums</td>
+                <td>Widgets</td>
+                <td>Phones</td>
+                <td>Help</td>
+              </tr>
+            </table>
+            <br />
+            <p class="fragment">
+              Throw some jQuery magic in there
+            </p>
+            <pre class="fragment">
+              <code>
+$('table.goofus_table td:contains("Albums")').popup(albumPopupContent);
+              </code>
+            </pre>
+            <div class="fragment">
+              <p>
+                Then some more
+              </p>
+              <pre class="fragment">
+                <code>
+$('table.goofus_table td:contains("Widgets")').popup(widgetsPopupContent);
+                </code>
+              </pre>
+            </div>
+          </section> 
+          <section>
+            <h2>
+              Goofus:
+            </h2>
+            <table class="goofus_menu">
+              <tr>
+                <td>
+                  <img height="50" width="50" src="transleaf.png" style="border-style:none"/>
+                </td>
+                <td>Home</td>
+                <td>Albums</td>
+                <td>Widgets</td>
+                <td>Phones</td>
+                <td>Help</td>
+              </tr>
+            </table>
+            <pre >
+              <code>
+$('table.goofus_table td:contains("Albums")').popup(albumPopupContent);
+$('table.goofus_table td:contains("Widgets")').popup(widgetsPopupContent);
+$('table.goofus_table td:contains("Phones")').popup(phonesPopupContent);
+$('table.goofus_table td:contains("Help")').popup(helpContent);
+              </code>
+            </pre>
+            <div class="fragment">
+              <p>
+                Maybe some event handling
+              </p>
+              <pre class="fragment">
+                <code>
+$('.popup_content').live('click',function(event){
+  var id= $('table.goofus_menu').attr('data-id'),
+    popupClicked= $(event.target).text();
+  showContent(popupClicked,id);
+  $('html').attr('data-activePopup',popupClicked);
+});
+                </code>
+              </pre>
+            </div>
+          </section> 
+          <section>
+            <h2>
+              Goofus:
+            </h2>
+            <table class="goofus_menu">
+              <tr>
+                <td>
+                  <img height="50" width="50" src="transleaf.png" style="border-style:none"/>
+                </td>
+                <td>Home</td>
+                <td>Albums</td>
+                <td>Widgets</td>
+                <td>Phones</td>
+                <td>Help</td>
+              </tr>
+            </table>
+            <pre >
+              <code>
+$('table.goofus_table td:contains("Albums")').popup(albumPopupContent);
+$('table.goofus_table td:contains("Widgets")').popup(widgetsPopupContent);
+$('table.goofus_table td:contains("Phones")').popup(phonesPopupContent);
+$('table.goofus_table td:contains("Help")').popup(helpContent);
+$('.popup_content').live('click',function(event){
+  var id= $('table.goofus_menu').attr('data-id'),
+    popupClicked= $(event.target).text();
+  showContent(popupClicked,id);
+  $('html').attr('data-activePopup',popupClicked);
+});
+              </code>
+            </pre>
+            <p>
+              This is a lot of code
+            <p>
+            <p class="fragment">
+              it performs a very common task
+            </p>
+            <small class="fragment">
+              and it involves a table tag *shudder*
+            </small>
+          </section> 
+
+        </section>
+        <section>
+          <section>
+            <h2>
+              Gallant:
+            </h2>
+            <p>
+              Searches for standards
+            </p>
+            <div class="fragment">
+              <p>
+                Menu Tag!
+              <p>
+              <menu type="toolbar" class="gallant_menu">
+                <img height="50" width="50" src="transleaf.png" style="border-style:none"/>
+                <li>
+                  <span>
+                    Home
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Albums
+                  </span>
+                  <menu class="submenu">
+                    <li>
+                      <a href="">The White Album</a>
+                    </li>
+                    <li>
+                      <a href="">The Black Album</a>
+                    </li>
+                    <li>
+                      <a href="">The Boring One</a>
+                    </li>
+                  </menu>
+                </li>
+                <li>
+                  <span>
+                    Widgets
+                  </span>
+                  <menu class="submenu">
+                    <li>
+                      <a href="">Widget 1</a>
+                    </li>
+                    <li>
+                      <a href="">Widget 2</a>
+                    </li>
+                    <li>
+                      <a href="">Widget 3</a>
+                    </li>
+                  </menu>
+                </li>
+                <li>
+                  <span>
+                    Phones
+                  </span>
+                  <menu class="submenu">
+                    <li>
+                      <a href="">Phone 1</a>
+                    </li>
+                    <li>
+                      <a href="">Phone 2</a>
+                    </li>
+                    <li>
+                      <a href="">Phone 3</a>
+                    </li>
+                  </menu>
+                </li>
+                <li>
+                  <span>
+                    Help
+                  </span>
+                </li>
+              </menu>
+            </div>
+            <p class="fragment">
+              All with Markup and CSS
+            </p>
+          </section>
+          <section>
+            <h2>
+              Gallant:
+            </h2>
+            <p>
+              Code comes out nicer too
+            </p>
+            <menu type="toolbar" class="gallant_menu transition">
+              <img height="50" width="50" src="transleaf.png" style="border-style:none"/>
+              <li>
+                <span>
+                  Home
+                </span>
+              </li>
+              <li>
+                <span>
+                  Albums
+                </span>
+                <menu class="submenu">
+                  <li>
+                    <a href="">The White Album</a>
+                  </li>
+                  <li>
+                    <a href="">The Black Album</a>
+                  </li>
+                  <li>
+                    <a href="">The Boring One</a>
+                  </li>
+                </menu>
+              </li>
+              <li>
+                <span>
+                  Widgets
+                </span>
+                <menu class="submenu">
+                  <li>
+                    <a href="">Widget 1</a>
+                  </li>
+                  <li>
+                    <a href="">Widget 2</a>
+                  </li>
+                  <li>
+                    <a href="">Widget 3</a>
+                  </li>
+                </menu>
+              </li>
+              <li>
+                <span>
+                  Phones
+                </span>
+                <menu class="submenu">
+                  <li>
+                    <a href="">Phone 1</a>
+                  </li>
+                  <li>
+                    <a href="">Phone 2</a>
+                  </li>
+                  <li>
+                    <a href="">Phone 3</a>
+                  </li>
+                </menu>
+              </li>
+              <li>
+                <span>
+                  Help
+                </span>
+              </li>
+            </menu>
+            <pre>
+              <code>
+$('menu.gallant_menu').on('click','menu.submenu>li',function(){
+  var value = $(this).attr('data-value');
+  if(value) doSomething(value);
+});
+              </code>
+            </pre>
+          </section>
+        </section>
+        <section>
+          <h2>
+            Data Storage: Things to consider
+          </h2>
+          <p class="fragment">
+            What is it for?
+          </p> 
+          <ul>
+            <li class="fragment">
+              Is it something the user should interact with?  <strong class="fragment">Forms+Inputs</strong>
+            </li>
+            <li class="fragment">
+              Is it just for a click action?  <strong class="fragment">Button value</strong>
+            </li>
+            <li class="fragment">
+              Just needs persistance?  
+              <strong class="fragment">localStorage</strong>
+              <strong class="fragment">, WebSQL</strong>
+              <strong class="fragment">, IndexedDB</strong>
+            </li>
+            <li class="fragment">
+              The DOM is the slowest part of any web application
+            </li>
+            <li class="fragment">
+              Think about where you're storing your data and why.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>
+            3: <strong class="fragment">Write Better Javascript</strong>
+          </h2>
+          <p class="fragment">
+            Lots of things to learn
+          </p>
+          <ul>
+            <li class="fragment">
+              Prototypal inheritance
+            </li>
+            <li class="fragment">
+              Functions as objects
+            </li>
+            <li class="fragment">
+              Objects as maps
+            </li>
+            <li class="fragment">
+              Context management
+            </li>
+            <li class="fragment">
+              Dynamic scoping
+            </li>
+          </ul>
+          <br />
+          <strong class="fragment">This will take a while</strong>
+        </section>
+        <section>
+          <h2>
+            In The Mean Time:
+          </h2>
+          <p class="fragment">
+            Use JSHint
+          </p>
+          <br />
+          <p class="fragment">
+            Good habits before you understand
+          </p>
+          <br />
+          <p class="fragment">
+            Browser optimized-code
+          </p>
+          <br />
+          <p class="fragment">
+            Pain In The Ass
+          </p>
+          <br />
+          <p class="fragment">
+            U Mad? <strong class="fragment">Go read about it</strong>
+          </p>
+        </section>
+        <section>
+          <section>
+            <h2>
+              Javascript Tips:
+            </h2>
+            <p class="fragment">
+              Objects are dictionaries<i class="fragment">: don't forget it</i>
+            </p>
+            <div class="fragment">
+              <p>
+                Forget about if statements
+              </p>
+              <pre>
+                <code>
+function routeMe(routeName){
+  if(routeName === 'route1') route1();
+  if(routeName === 'route2' && today === 'Wednesday') route2();
+  if(routeName === 'route3') messages.push('Tried to go to route 3')
+  if(routeName === 'route4') alert('How many examples do you people need?');
+}
+                </code>
+              </pre>
+              <p class="fragment">The "C" and "V" keys on Goofus's keyboard are worn out</p>
+            </div>
+          </section>
+          <section>
+            <h2>
+              Javascript Tips:
+            </h2>
+            <p>
+              Objects are dictionaries
+            </p>
+            <div class="fragment">
+              <p>
+                Key/Value stores are great!
+              </p>
+              <pre>
+                <code>
+var routes={
+  'route1' : route1,
+  'route2' : function(){
+    return today==='Wednesday' ? route2() : undefined;
+  },
+  'route3' : messages.push,
+  'route4' : function(){
+    console.warn('Seriously, it's a straight-forward enough thing');
   }
-  R++;
-};
-//Loop
-setInterval(function(){A()},s);
-console.log("Sandstorm!");
-            </article>
-          </div>
-          <aside class="notes">
-            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-          </aside>
-        </section>
+}
 
+function routeMe(routeName){
+  routes[routeName]();
+}
+                </code>
+              </pre>
+            </div>
+          </section>
+          <section>
+            <h2>
+              Javascript Tips: Objects
+            </h2>
+            <div >
+              <p>
+                Free high-speed reflection
+              </p>
+              <pre>
+                <code>
+var validations={
+  'You gave love a bad name' : love.value &lt; 0,
+  'That address is unknown' : !address,
+  "Your cheatin' heart done me wrong" : lover.lovers.length > 1 && !poly,
+  "It's too late to apologize" : newLovers.length > 0
+}
+
+for(var message in validations){
+  if(validations[message]) showMessage(message);
+}
+                </code>
+              </pre>
+            </div>
+          </section>
+        </section>
         <section>
-          <h2>attempt 2</h2>
+          <section>
+            <h2>
+              Javascript Tips:
+            </h2>
+            <div>
+              <p >
+                Falsiness
+              </p>
+              <p class="fragment">
+                It's weird <i class="fragment">but you'll like it</i>
+              </p>
+              <pre class="fragment">
+                <code>
+function callHandler(aRouter){
+  //Goofus just trusts his data
+  
+  aRouter.handler();
+  
+  //And will probably have to deal with a runtime exception
+}
+                </code>
+              </pre>
+              <pre class="fragment">
+                <code>
+function callHandler(aRouter){
+  //Gallant knows better
+  
+  (aRouter || {handler:function(){}})();
+}
+                </code>
+              </pre>
+            </div>
+          </section>
+          <section>
+            <h2>
+              Javascript Tips: Falsiness
+            </h2>
+            <div>
+              <p >
+                There are so many uses
+              </p>
+              <pre class="fragment">
+                <code>
+myName = myName || defaultName;
+prompt = messages.length ? 'Too many messages' : 'Not Enough Messages';
+
+function isValid(){
+  return this.value && this.value >0
+}
+
+while(counter){
+  if(incrementState()) 
+    counter++;
+  else
+    counter--;
+}
+                </code>
+              </pre>
+            </div>
+            <p class="fragment">
+              Stop creating flags <p class="fragment">Let your data decide</p>
+            <p>
+          </section>
         </section>
+        <section>
+          <section>
+           <h2>
+              Javascript Tips: Scope
+            </h2>
+            <p class="fragment">
+              Learn to use scopes to your advantage
+            </p>
+            
+            <p class="fragment">
+              Goofus javascript is the past
+            </p>
+            <pre class="fragment">
+              <code>
+var Vehicle = function Vehicle() {
+  Vehicle.prototype.wheelCount = 4;
+  Vehicle.prototype.isTotallyAZipcar = false;
+  Vehicle.prototype.__validate = function(){
+    return this.wheelCount>3;
+  };
+  Vehicle.prototype.save=function(){
+    if(this.__validate()) sendToServer(this); 
+  }
+}
 
+var vehicle = new Vehicle();
+              </code>
+            </pre>
+            <p class="fragment">Scope gives us access control</p>
+
+          </section>
+          <section>
+           <h2>
+              Javascript Tips: Scope
+            </h2>
+            
+            <p >
+              Done right, scope provides concealment and easy access
+            </p>
+            <pre class="fragment">
+              <code>
+function validate(anObject){
+  return anObject && anObject.wheelCount > 3
+}
+var Vehicle = Backbone.Model.extend({
+  'wheelCount' : 4,
+  'isTotallyAZipcar' : false;
+  save : function(){
+    if(validate(this)) sendToServer(this);
+  }
+});
+              </code>
+            </pre>
+            <p class="fragment">Concise and Expressive APIs</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>
+              Javascript Tips:
+            </h2>
+            <p >
+              Libraries
+            </p>
+            <p class="fragment">
+              They're a lexicon <strong class="fragment">Learn the vocabulary</strong>
+            </p>
+            <br />
+            <p class="fragment">
+              Use them, or you'll write them yourself
+            </p>
+
+          </section>
+          <section>
+            <h2>
+              Javascript Tips: Libraries
+            </h2>
+            <p >
+              All have their own functions
+            </p>
+            <ul >
+              <li class="fragment">
+                <strong>jQuery</strong>
+                <span class="fragment">: DOM Manipulation</span>
+                <span class="fragment">, Cross Browser Compatibiilty</span>
+                <span class="fragment">, Crap at everyting else</span>
+              </li>
+              <li class="fragment">
+                <strong>Underscore/Lodash</strong>
+                <span class="fragment">: Standard library for the web</span>
+                <span class="fragment">, Every simple loop</span>
+                <span class="fragment">, optimized</span>
+              </li>
+              <li class="fragment">
+                <strong>RequireJS</strong>
+                <span class="fragment">: Organizes your dependencies</span>
+                <span class="fragment">, won't structure your project</span>
+              </li>
+              <li class="fragment">
+                <strong>Backbone</strong>
+                <span class="fragment">: Stops you from writing code without a framework</span>
+              </li>
+            </ul>
+            <br />
+            <br />
+            <p class="fragment">
+              Knowing them <strong>well</strong> will make you a better engineer
+            </p>
+
+          </section>
+        </section>
       </div>
-
     </div>
 
     <script src="/assets/reveal.js/lib/js/head.min.js"></script>
     <script src="/assets/reveal.js/js/reveal.min.js"></script>
-
     <script src="/assets/jquery/jquery.js"></script>
-    <script src="/assets/ace-builds/src/ace.js"></script>
-    <script src="/assets/codeblock/codeblock.js"></script>
-
+  
     <script>
 
       // Full list of configuration options available here:
@@ -93,16 +1086,6 @@ console.log("Sandstorm!");
           { src: '/assets/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });
-
-      Reveal.addEventListener( 'slidechanged', function( event ) {
-        $(event.currentSlide).find('article').codeblock();
-        $(event.previousSlide).find('article').codeblock("destroy");
-      } );
-
-
     </script>
-
-
-
   </body>
 </html>
