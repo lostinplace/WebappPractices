@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="/assets/reveal.js/css/reveal.min.css">
-    <link rel="stylesheet" href="/assets/reveal.js/css/theme/solarized.css" id="theme">
+    <link rel="stylesheet" href="/assets/reveal.js/css/theme/night.css" id="theme">
 
     <link rel="stylesheet" href="/assets/reveal.js/lib/css/zenburn.css">
     <link rel="stylesheet" type="text/css" href="/assets/codeblock/codeblock.css">
@@ -319,6 +319,12 @@ function showMessage(aMessage){
               </code>
             </pre>
             <p class="fragment">
+              Is this portable?
+            </p>
+            <p class="fragment goofus_speech">
+              ....<i class="fragment">sure....</i>
+            </p>
+            <p class="fragment">
               I found this in real code
             </p>
           </section>
@@ -399,6 +405,9 @@ function showMessage(aMessage, anOptionalStyle){
 }
               </code>
             </pre>
+            <p class="fragment">
+              Portable?
+            </p>
           </section>
         </section>
         <section>
@@ -441,6 +450,9 @@ function showMessage(aMessage, anOptionalStyle){
             <li class="fragment">
               Javascript mediates the interactions between user and data
             </li>
+            <li class="fragment">
+              <strong>Frameworks are here to help</strong>
+            </li>
           </ul>
         </section>
         <section>
@@ -464,12 +476,13 @@ function showMessage(aMessage, anOptionalStyle){
               </tr>
             </table>
             <br />
-            <p class="fragment">
+            <p class="fragment goofus_speech">
               Throw some jQuery magic in there
             </p>
             <pre class="fragment">
               <code>
 $('table.goofus_table td:contains("Albums")').popup(albumPopupContent);
+//enormity of albumPopupContent not shown
               </code>
             </pre>
             <div class="fragment">
@@ -501,6 +514,7 @@ $('table.goofus_table td:contains("Widgets")').popup(widgetsPopupContent);
             </table>
             <pre >
               <code>
+//Crazy content objects
 $('table.goofus_table td:contains("Albums")').popup(albumPopupContent);
 $('table.goofus_table td:contains("Widgets")').popup(widgetsPopupContent);
 $('table.goofus_table td:contains("Phones")').popup(phonesPopupContent);
@@ -541,6 +555,7 @@ $('.popup_content').live('click',function(event){
             </table>
             <pre >
               <code>
+//Not showing these objects in their entirety kind of robs them of rhetorical force
 $('table.goofus_table td:contains("Albums")').popup(albumPopupContent);
 $('table.goofus_table td:contains("Widgets")').popup(widgetsPopupContent);
 $('table.goofus_table td:contains("Phones")').popup(phonesPopupContent);
@@ -719,6 +734,37 @@ $('menu.gallant_menu').on('click','menu.submenu>li',function(){
 });
               </code>
             </pre>
+            <p class="fragment gallant_speech">
+              Semantically correct markup is easier to navigate
+            </p>
+            <p class="fragment ">
+              Search for semantically correct solutions
+            </p>
+          </section>
+          <section>
+            <h2>
+              Semantic Tag Usage
+            </h2>
+            <p class="fragment"> New HTML5 tags</p>
+            <pre class="fragment">
+              <code>
+                &lt;code>
+                &lt;nav>
+                &lt;header>
+                &lt;footer>
+                &lt;main>
+                &lt;pre>
+                &lt;data>
+                &lt;ruby>
+                &lt;video>
+                &lt;progress>
+                &lt;details>
+              </code>
+            </pre>
+            <p class="fragment">Actively being developed</p>
+            <p class="fragment">Browser and Library developers need work too!</p>
+            <p class="fragment gallant_speech">Use <a href="html5doctor.com">HTML5 Doctor</a>!</p>
+
           </section>
         </section>
         <section>
@@ -742,10 +788,10 @@ $('menu.gallant_menu').on('click','menu.submenu>li',function(){
               <strong class="fragment">, IndexedDB</strong>
             </li>
             <li class="fragment">
-              The DOM is the slowest part of any web application
+              The DOM is <strong>slow</strong>
             </li>
             <li class="fragment">
-              Think about where you're storing your data and why.
+              Where are you storing your data and why?
             </li>
           </ul>
         </section>
@@ -845,7 +891,7 @@ var routes={
   },
   'route3' : messages.push,
   'route4' : function(){
-    console.warn('Seriously, it's a straight-forward enough thing');
+    console.warn("Seriously, it's a straight-forward enough thing");
   }
 }
 
@@ -867,8 +913,8 @@ function routeMe(routeName){
               <pre>
                 <code>
 var validations={
-  'You gave love a bad name' : love.value &lt; 0,
-  'That address is unknown' : !address,
+  "You gave love a bad name" : love.value &lt; 0,
+  "That address is unknown" : !address,
   "Your cheatin' heart done me wrong" : lover.lovers.length > 1 && !poly,
   "It's too late to apologize" : newLovers.length > 0
 }
@@ -879,6 +925,9 @@ for(var message in validations){
                 </code>
               </pre>
             </div>
+            <p class="fragment">
+              Dictionary objects are expressive and portable
+            </p>
           </section>
         </section>
         <section>
@@ -1042,7 +1091,7 @@ var Vehicle = Backbone.Model.extend({
               <li class="fragment">
                 <strong>RequireJS</strong>
                 <span class="fragment">: Organizes your dependencies</span>
-                <span class="fragment">, won't structure your project</span>
+                <span class="fragment">, won't structure your project for you</span>
               </li>
               <li class="fragment">
                 <strong>Backbone</strong>
@@ -1054,8 +1103,30 @@ var Vehicle = Backbone.Model.extend({
             <p class="fragment">
               Knowing them <strong>well</strong> will make you a better engineer
             </p>
-
           </section>
+        </section>
+        <section>
+          <h2>
+            Conclusion
+          </h2>
+          <ul>
+            <li class="fragment">
+              We all write embarassing code <i class="fragment gallant_speech"> We can improve with standardization</i>
+            </li>
+            <br />
+            <li class="fragment">
+              Web standards docs are there to help you <i class="fragment gallant_speech"> Use <a href="https://developer.mozilla.org/en-US/">MDN</a></i>
+            </li>
+            <br />
+            <li class="fragment">
+              Feel like it's a lot of work? <i class="fragment current-visible goofus_speech">Stack Overflow!</i>
+              <i class="fragment gallant_speech">Start with the docs</i>
+            </li>
+            <li class="fragment" style="margin-top:25px">
+              Decide on standards <span class="fragment"> stick to them</span> <span class="fragment"> discuss them</span> <span class="fragment"> refine them</span>
+              <p class="fragment"> contribute</p>
+            </li>
+          </ul>
         </section>
       </div>
     </div>
